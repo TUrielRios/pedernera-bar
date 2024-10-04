@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { Martini, Wine, X } from 'lucide-react'
 import Image from 'next/image'
 import sunnyimg from '../app/public/sunny.jpg'
 import basil from '../app/public/basil.jpg'
