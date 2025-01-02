@@ -12,7 +12,6 @@ import highball from '../app/public/highball.jpg'
 import ron_argento from '../app/public/ron_argento.png'
 import pomelo_tropical from '../app/public/pomelo_tropical.png'
 import footerimg from '../app/public/4glasses.jpg'
-import baileys from '../app/public/baileys.png'
 import patron from '../app/public/patron.png'
 import jagger from '../app/public/jagger.png'
 
