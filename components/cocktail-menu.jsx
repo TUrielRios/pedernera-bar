@@ -3,161 +3,69 @@
 import { useState } from 'react'
 import { X } from 'lucide-react'
 import Image from 'next/image'
-import punt_pampa from '../app/public/sunny.jpg'
-import dulce_criollo from '../app/public/dulce_criollo.png'
-import sol_norte from '../app/public/sol_norte.png'
-import frutal from '../app/public/frutal.jpg'
-import gin_criollo from '../app/public/gin-criollo.png'
-import highball from '../app/public/highball.jpg'
-import ron_argento from '../app/public/ron_argento.png'
-import pomelo_tropical from '../app/public/pomelo_tropical.png'
-import footerimg from '../app/public/4glasses.jpg'
-import patron from '../app/public/patron.png'
-import jagger from '../app/public/jagger.png'
+import sunny_cocktail from '../app/public/sunnyCocktail.png'
+import tango from '../app/public/tango.png'
+import malvina from '../app/public/malvina.png'
+import pedernera from '../app/public/pedernera.png'
 
 const cocktails = [
   {
-    id: 1,
-    name: "Punt & Pampa",
-    description: "Un cóctel amargo-dulce con un final cítrico refrescante.",
-    image: punt_pampa,
-    ingredients: [
-      { name: "Base alcoholica", description: "Vermú Punt e Mes" },
-      { name: "Citrico", description: "Jugo de pomelo" },
-      { name: "Endulzante", description: "Granadina" },
-      { name: "Hielo", description: "Cubitos" },
-      { name: "Cristaleria", description: "Vaso corto" },
-      { name: "Metodo", description: "Construcción directa" }
-    ]
-  },
-  {
     id: 2,
-    name: "Obrero de la Tarde",
-    description: "Un trago chispeante y equilibrado con notas amargas y dulces.",
-    image: highball,
+    name: "Sunny Cocktail",
+    description: "Brilla como una tarde de verano. La suavidad del ron de coco se funde con el gin y la frescura cítrica, mientras la granadina aporta un destello dulce y vibrante. El perfume de albahaca lo eleva, creando un trago fresco, alegre y encantador. Ideal para abrir la pista... o simplemente sonreír.",
+    image: sunny_cocktail, // Necesitarás importar esta imagen
     ingredients: [
-      { name: "Base alcoholica", description: "Amargo Obrero" },
-      { name: "Citrico", description: "Jugo de pomelo" },
-      { name: "Diluyente", description: "Sprite" },
-      { name: "Hielo", description: "Cubitos" },
+      { name: "Base alcoholica", description: "Ron de coco y gin" },
+      { name: "Citrico", description: "Jugo de naranja, jugo de limón" },
+      { name: "Endulzante", description: "Granadina" },
+      { name: "Garnish", description: "Una rodaja de naranja y una rama de albahaca" },
       { name: "Cristaleria", description: "Vaso largo" },
-      { name: "Metodo", description: "Construcción directa" }
+      { name: "Maridaje", description: "Ideal para disfrutar durante cualquier momento del cumpleaños" }
     ]
   },
   {
     id: 3,
-    name: "Gintonic Criollo",
-    description: "Un clásico reversionado con aromas cítricos.",
-    image: gin_criollo,
+    name: "Tango",
+    description: "Un clásico con espíritu porteño. La frescura del limón y el pepino se fusionan con la intensidad del gin y un toque de almíbar, dando como resultado un trago equilibrado, vibrante y elegante. Ideal para brindar después del almuerzo, con el ritmo suave de una tarde de celebración.",
+    image: tango, // Necesitarás importar esta imagen
     ingredients: [
-      { name: "Base alcoholica", description: "Gin Tanqueray y 10ml de vermú" },
-      { name: "Diluyente", description: "Agua tónica" },
-      { name: "Citrico", description: "Rodaja de pomelo" },
-      { name: "Hielo", description: "Cubitos" },
+      { name: "Base alcoholica", description: "Gin" },
+      { name: "Citrico", description: "Jugo de limón" },
+      { name: "Endulzante", description: "Almíbar" },
+      { name: "Garnish", description: "Una rodaja de limón" },
+      { name: "Extra", description: "Pepino" },
       { name: "Cristaleria", description: "Vaso largo" },
-      { name: "Metodo", description: "Construcción directa" }
+      { name: "Maridaje", description: "Ideal para después del almuerzo" }
     ]
   },
   {
     id: 4,
-    name: "Roncito Argento",
-    description: "Un trago fresco con un toque cítrico y burbujeante.",
-    image: ron_argento,
+    name: "Malvina",
+    description: "Ligero, herbal y refrescante, Malvina es un cóctel pensado para acompañar almuerzos al sol. La fusión del gin y el Aperol se suaviza con almíbar y limón, mientras el pepino y el agua tónica le suman frescura y carácter. Ideal para acompañar almuerzos largos, sobremesas compartidas y charlas al sol.",
+    image: malvina, // Necesitarás importar esta imagen
     ingredients: [
-      { name: "Base alcoholica", description: "Ron Bacardi" },
+      { name: "Base alcoholica", description: "Gin y Aperol" },
       { name: "Citrico", description: "Jugo de limón" },
-      { name: "Endulzante", description: "Almibar" },
-      { name: "Diluyente", description: "Sprite" },
-      { name: "Hielo", description: "Cubitos" },
+      { name: "Endulzante", description: "Almíbar" },
+      { name: "Garnish", description: "Una rodaja de naranja" },
+      { name: "Extra", description: "Agua tónica y pepino" },
       { name: "Cristaleria", description: "Vaso largo" },
-      { name: "Metodo", description: "Construcción directa" }
+      { name: "Maridaje", description: "Ideal para acompañar el almuerzo" },
+      { name: "Importante", description: "Llená tu vaso hasta la mitad con Malvina y completá con agua tónica." }
     ]
   },
   {
     id: 5,
-    name: "Sol del Norte",
-    description: "Un cóctel dulce con un degradado espectacular.",
-    image: sol_norte,
+    name: "Pedernera",
+    description: "Un trago cálido y jugoso, con alma tropical y cuerpo dorado. El ron se fusiona con el dulzor suave del durazno y el cítrico vibrante de la naranja, mientras el almíbar equilibra con sutileza. Fresco, frutal y fácil de amar, es el compañero ideal para snacks salados y momentos distendidos.",
+    image: pedernera, // Necesitarás importar esta imagen
     ingredients: [
-      { name: "Base alcoholica", description: "Vodka" },
-      { name: "Citrico", description: "Jugo de naranja" },
-      { name: "Endulzante", description: "Granadina" },
-      { name: "Hielo", description: "Cubitos" },
-      { name: "Cristaleria", description: "Vaso largo" },
-      { name: "Metodo", description: "Construcción directa" }
-    ]
-  },
-  {
-    id: 6,
-    name: "Pomelo Tropical",
-    description: "Una mezcla cítrica y refrescante con cachaza.",
-    image: pomelo_tropical,
-    ingredients: [
-      { name: "Base alcoholica", description: "Cachaza" },
-      { name: "Citrico", description: "Jugo de pomelo" },
-      { name: "Endulzante", description: "Azúcar" },
-      { name: "Diluyente", description: "Sprite" },
-      { name: "Hielo", description: "Cubitos" },
-      { name: "Cristaleria", description: "Vaso largo" },
-      { name: "Metodo", description: "Construcción directa" }
-    ]
-  },
-  {
-    id: 7,
-    name: "Dulces sueños",
-    description: "Un trago cremoso con un toque dulce y un contraste inesperado.",
-    image: dulce_criollo,
-    ingredients: [
-      { name: "Base alcoholica", description: "Baileys" },
-      { name: "Endulzante", description: "Granadina" },
-      { name: "Refuerzo", description: "Vodka" },
-      { name: "Hielo", description: "Cubitos" },
-      { name: "Cristaleria", description: "Vaso corto" },
-      { name: "Metodo", description: "Agitado" }
-    ]
-  },
-  {
-    id: 9,
-    name: "El Patrón del Obrero",
-    description: "Un trago fresco e intenso con notas herbales.",
-    image: patron,
-    ingredients: [
-      { name: "Base alcoholica", description: "Amargo Obrero" },
-      { name: "Citrico", description: "Jugo de limón y pomelo" },
-      { name: "Diluyente", description: "Soda" },
-      { name: "Hielo", description: "Cubitos" },
-      { name: "Cristaleria", description: "Vaso corto" },
-      { name: "Metodo", description: "Construcción directa" }
-    ]
-  },
-  {
-    id: 10,
-    name: "Fresco y Jagger",
-    description: "Un trago herbáceo y refrescante con un toque oscuro.",
-    image: jagger,
-    ingredients: [
-      { name: "Base alcoholica", description: "Jagger" },
-      { name: "Cítrico", description: "Jugo de pomelo" },
+      { name: "Base alcoholica", description: "Ron dorado" },
+      { name: "Citrico", description: "Jugo de naranja y jugo de durazno" },
+      { name: "Garnish", description: "Una rodaja de naranja" },
       { name: "Endulzante", description: "Almíbar" },
-      { name: "Diluyente", description: "Sprite" },
-      { name: "Hielo", description: "Cubitos" },
-      { name: "Cristaleria", description: "Vaso corto" },
-      { name: "Metodo", description: "Construcción directa" }
-    ]
-  },
-  {
-    id: 11,
-    name: "Argentum",
-    description: "Un cóctel complejo con un balance perfecto entre dulce, amargo y cítrico.",
-    image: frutal,
-    ingredients: [
-      { name: "Base alcoholica", description: "Ron Bacardi" },
-      { name: "Refuerzo", description: "Amargo Obrero" },
-      { name: "Citrico", description: "Jugo de pomelo" },
-      { name: "Endulzante", description: "Granadina" },
-      { name: "Hielo", description: "Cubitos" },
       { name: "Cristaleria", description: "Vaso largo" },
-      { name: "Metodo", description: "Agitado y colado" }
+      { name: "Maridaje", description: "Ideal para acompañarlo con snacks y salados." }
     ]
   }
 ];
@@ -225,15 +133,6 @@ export function CocktailMenu() {
         </div>
       )}
       
-      <div className="mt-8 flex justify-center text-center text-[#1C4E36]">
-      <Image
-                src={footerimg}
-                alt='4 copas'
-                width={200}
-                height={200}
-                className="mr-4"
-              />
-      </div>
     </div>
   )
 }
