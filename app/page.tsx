@@ -116,7 +116,7 @@ export default function CocktailMenu() {
   }, [currentIndex])
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#fcf4e4" }}>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#fcf4e4", overflow: "hidden" }}>
       {/* Main Content - Full Screen */}
       <main className="flex-1 relative">
         <div
