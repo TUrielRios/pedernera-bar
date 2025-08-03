@@ -185,13 +185,6 @@ export default function CocktailMenu() {
               </button>
             ))}
           </div>
-
-          {/* Cocktail Name Overlay - Optional, positioned at top */}
-          <div className="absolute top-8 left-1/2 -translate-x-1/2 z-10">
-            <div className="bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
-              <h2 className="text-white text-lg font-bold text-center">{cocktails[currentIndex].name}</h2>
-            </div>
-          </div>
         </div>
       </main>
     </div>
